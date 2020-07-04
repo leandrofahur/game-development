@@ -40,7 +40,7 @@ const playerPaddleColisionHandler = () => {
   if(paddlePosY < 0) {
     paddleVelY *= -1;
   }
-  if(paddlePosY + PADDLE_HEIGHT> canvas.height) {
+  if(paddlePosY + PADDLE_HEIGHT > canvas.height) {
     paddleVelY *= -1;
   }
 }
