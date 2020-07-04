@@ -95,7 +95,10 @@ const ballPaddleColisionHandler = () => {
 
   if(ballPosX - BALL_RADIUS < paddlePosX && ballPosY > paddleTopPosY && ballPosY < paddleBottonPosY) {
     ballVelX *= -1;
-    // ballVelY *= -1;
+    
+    let centerPaddlePosY = paddleTopPosY + PADDLE_HEIGHT/2;
+    let k = 0.35;
+    ballVelY = Math.abs(centerPaddlePosY - ballPosY) * 0.35;
   }
 }
 
