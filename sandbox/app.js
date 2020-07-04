@@ -15,7 +15,11 @@ window.onload = () => {
 
 const game = () => {
   gameWorld();
+
   canvasContext.drawImage(img, 0, 0);
+  
+
+
   colorText(mousePosX, mousePosY, `(${mousePosX}, ${mousePosY})`, 'yellow');
 
 }
