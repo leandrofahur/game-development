@@ -55,7 +55,7 @@ const ballPaddleColisionHandler = () => {
     
     let centerPaddlePosY = paddleTopPosY + PADDLE_HEIGHT/2;
     let k = 0.35;
-    ballVelY = -1 * k * Math.abs(centerPaddlePosY - ballPosY);
+    ballVelY = k * Math.abs(centerPaddlePosY - ballPosY);
   }
 }
 
@@ -69,7 +69,7 @@ const paddleColisionHandler = () => {
     
     let centerPaddlePosY = paddleTopPosY + PADDLE_HEIGHT/2;
     let k = 0.35;
-    ballVelY = -1 * k * Math.abs(centerPaddlePosY - ballPosY);
+    ballVelY = k * Math.abs(centerPaddlePosY - ballPosY);
   }
 }
 

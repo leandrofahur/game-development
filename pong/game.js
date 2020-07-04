@@ -15,8 +15,11 @@ const BALL_RADIUS = 10;
 const PADDLE_WIDTH = 10;
 const PADDLE_HEIGHT = 100;
 const PADDLE_SIDE_OFFSET = 20;
+let aiPaddlePosY = canvas.height/2 - PADDLE_HEIGHT/2;
 let paddlePosY = canvas.height/2 - PADDLE_HEIGHT/2;
 let paddleVelY = 5;
+
+
 
 // GAME DISPLAY:
 window.onload = () => {
