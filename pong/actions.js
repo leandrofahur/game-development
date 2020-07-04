@@ -6,14 +6,16 @@ const draw = () => {
   // Player (Paddle 1):
   colorRect(PADDLE_SIDE_OFFSET, paddlePosY, PADDLE_WIDTH, PADDLE_HEIGHT, 'white');
   // AI Player (Paddle 2):
-  colorRect(canvas.width - PADDLE_SIDE_OFFSET - PADDLE_WIDTH, paddlePosY, PADDLE_WIDTH, PADDLE_HEIGHT, 'white');
+  colorRect(canvas.width - PADDLE_SIDE_OFFSET - PADDLE_WIDTH, aiPaddlePosY, PADDLE_WIDTH, PADDLE_HEIGHT, 'white');
 }
 
 const move = () => {
   ballColisionHandler();
-  playerPaddleColisionHandler();
-  paddleColisionHandler();
+  // playerPaddleColisionHandler();
+  // aiPaddleColisionHandler();
+  ballAiPaddleColisionHandler();
   ballPaddleColisionHandler();
+  aiPaddlePlayer();
 }
 
 const ballColisionHandler = () => {
@@ -34,15 +36,16 @@ const ballColisionHandler = () => {
   }
 }
 
-const playerPaddleColisionHandler = () => {
+const aiPaddleColisionHandler = () => {
   // PADDLE COLISION:
   // paddlePosY += paddleVelY;
-  if(paddlePosY < 0) {
-    paddleVelY *= -1;
-  }
-  if(paddlePosY + PADDLE_HEIGHT > canvas.height) {
-    paddleVelY *= -1;
-  }
+  // aiPaddlePosY += aiPaddleVelY;
+  // if(aiPaddlePosY < 0) {
+  //   aiPaddleVelY *= -1;
+  // }
+  // if(aiPaddlePosY + PADDLE_HEIGHT > canvas.height) {
+  //   aiPaddleVelY *= -1;
+  // }
 }
 
 const ballPaddleColisionHandler = () => {
@@ -59,10 +62,10 @@ const ballPaddleColisionHandler = () => {
   }
 }
 
-const paddleColisionHandler = () => {
+const ballAiPaddleColisionHandler = () => {
   let paddlePosX = canvas.width - PADDLE_SIDE_OFFSET - PADDLE_WIDTH;
-  let paddleTopPosY = paddlePosY;
-  let paddleBottonPosY = paddlePosY + PADDLE_HEIGHT;
+  let paddleTopPosY = aiPaddlePosY;
+  let paddleBottonPosY = aiPaddlePosY + PADDLE_HEIGHT;
 
   if(ballPosX + BALL_RADIUS > paddlePosX && ballPosY > paddleTopPosY && ballPosY < paddleBottonPosY) {
     ballVelX *= -1;
@@ -71,6 +74,23 @@ const paddleColisionHandler = () => {
     let k = 0.35;
     ballVelY = k * Math.abs(centerPaddlePosY - ballPosY);
   }
+}
+
+const aiPaddlePlayer = () => {
+  let aiPaddlePosYCenter = aiPaddlePosY + PADDLE_HEIGHT/2;
+  if(aiPaddlePosYCenter < ballPosY - 35) {
+    aiPaddlePosY += 5;
+  } 
+  if(aiPaddlePosYCenter > ballPosY + 35) {
+    aiPaddlePosY -= 5;
+  }
+
+  // if(aiPaddlePosY < 0) {
+  //   aiPaddleVelY *= -1;
+  // }
+  // if(aiPaddlePosY + PADDLE_HEIGHT > canvas.height) {
+  //   aiPaddleVelY *= -1;
+  // }
 }
 
 const game = () => {

@@ -17,6 +17,7 @@ const PADDLE_HEIGHT = 100;
 const PADDLE_SIDE_OFFSET = 20;
 let aiPaddlePosY = canvas.height/2 - PADDLE_HEIGHT/2;
 let paddlePosY = canvas.height/2 - PADDLE_HEIGHT/2;
+let aiPaddleVelY = 5;
 let paddleVelY = 5;
 
 
