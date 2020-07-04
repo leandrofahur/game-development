@@ -1,0 +1,16 @@
+html, body {
+  background-color: goldenrod;
+}
+
+.container {
+  width: 500px;
+  text-align: center;
+}
+
+#circleRed {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background: red;
+}
