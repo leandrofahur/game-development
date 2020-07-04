@@ -20,7 +20,9 @@ let paddlePosY = canvas.height/2 - PADDLE_HEIGHT/2;
 let aiPaddleVelY = 5;
 let paddleVelY = 5;
 
-
+// Scores:
+let playerScore = 0;
+let aiScore = 0;
 
 // GAME DISPLAY:
 window.onload = () => {

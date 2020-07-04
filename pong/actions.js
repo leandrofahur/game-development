@@ -11,8 +11,6 @@ const draw = () => {
 
 const move = () => {
   ballColisionHandler();
-  // playerPaddleColisionHandler();
-  // aiPaddleColisionHandler();
   ballAiPaddleColisionHandler();
   ballPaddleColisionHandler();
   aiPaddlePlayer();
@@ -24,9 +22,11 @@ const ballColisionHandler = () => {
   ballPosY += ballVelY;  
   if(ballPosX - BALL_RADIUS < 0) {
     ballReset();
+    playerScore++;
   }
   if(ballPosX + BALL_RADIUS > canvas.width) {
     ballReset();
+    aiScore++;
   }
   if(ballPosY - BALL_RADIUS < 0) {
     ballVelY *= -1;
@@ -34,18 +34,6 @@ const ballColisionHandler = () => {
   if(ballPosY + BALL_RADIUS > canvas.height) {
     ballVelY *= -1;
   }
-}
-
-const aiPaddleColisionHandler = () => {
-  // PADDLE COLISION:
-  // paddlePosY += paddleVelY;
-  // aiPaddlePosY += aiPaddleVelY;
-  // if(aiPaddlePosY < 0) {
-  //   aiPaddleVelY *= -1;
-  // }
-  // if(aiPaddlePosY + PADDLE_HEIGHT > canvas.height) {
-  //   aiPaddleVelY *= -1;
-  // }
 }
 
 const ballPaddleColisionHandler = () => {
@@ -84,16 +72,18 @@ const aiPaddlePlayer = () => {
   if(aiPaddlePosYCenter > ballPosY + 35) {
     aiPaddlePosY -= 5;
   }
+}
 
-  // if(aiPaddlePosY < 0) {
-  //   aiPaddleVelY *= -1;
-  // }
-  // if(aiPaddlePosY + PADDLE_HEIGHT > canvas.height) {
-  //   aiPaddleVelY *= -1;
-  // }
+const onUpdateScores = () => {
+  let p1 = document.getElementById('p1');
+  let p2 = document.getElementById('p2');
+
+  p1.innerHTML = playerScore;
+  p2.innerHTML = aiScore;
 }
 
 const game = () => {
   draw();
   move();
+  onUpdateScores();
 }

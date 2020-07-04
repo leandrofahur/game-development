@@ -4,9 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pong</title>
+  <style>
+    html {
+      background-color: darkgrey;
+    }
+    h1, table {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    table th {
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
-  <canvas id="gameCanvas" height="500" width="500"></canvas>
+  <div class="container">
+    <h1>PONG</h1>
+    <canvas id="gameCanvas" height="500" width="500"></canvas>
+    <table class="score-table">
+      <thead>
+        <tr>
+          <th>Player 1</th>
+          <th>Player 2</th>                  
+        </tr>
+      </thead>
+      <tbody id="scores">
+        <td id="p1">0</td>
+        <td id="p2">0</td>
+      </tbody>
+    </table>
+  </div>
+  
   <script src="./graphicsCommon.js"></script>
   <script src="./actions.js"></script>
   <script src="./utils.js"></script>
