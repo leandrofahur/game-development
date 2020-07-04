@@ -5,10 +5,13 @@ const draw = () => {
   ball(ballPosX, ballPosY, BALL_RADIUS, 'white');
   // Player (Paddle 1):
   colorRect(PADDLE_SIDE_OFFSET, paddlePosY, PADDLE_WIDTH, PADDLE_HEIGHT, 'white');
+  // AI Player (Paddle 2):
+  colorRect(canvas.width - PADDLE_SIDE_OFFSET - PADDLE_WIDTH, paddlePosY, PADDLE_WIDTH, PADDLE_HEIGHT, 'white');
 }
 
 const move = () => {
   ballColisionHandler();
+  playerPaddleColisionHandler();
   paddleColisionHandler();
   ballPaddleColisionHandler();
 }
@@ -18,11 +21,10 @@ const ballColisionHandler = () => {
   ballPosX += ballVelX;  
   ballPosY += ballVelY;  
   if(ballPosX - BALL_RADIUS < 0) {
-    // ballVelX *= -1;
     ballReset();
   }
   if(ballPosX + BALL_RADIUS > canvas.width) {
-    ballVelX *= -1;
+    ballReset();
   }
   if(ballPosY - BALL_RADIUS < 0) {
     ballVelY *= -1;
@@ -32,7 +34,7 @@ const ballColisionHandler = () => {
   }
 }
 
-const paddleColisionHandler = () => {
+const playerPaddleColisionHandler = () => {
   // PADDLE COLISION:
   // paddlePosY += paddleVelY;
   if(paddlePosY < 0) {
@@ -49,6 +51,20 @@ const ballPaddleColisionHandler = () => {
   let paddleBottonPosY = paddlePosY + PADDLE_HEIGHT;
 
   if(ballPosX - BALL_RADIUS < paddlePosX && ballPosY > paddleTopPosY && ballPosY < paddleBottonPosY) {
+    ballVelX *= -1;
+    
+    let centerPaddlePosY = paddleTopPosY + PADDLE_HEIGHT/2;
+    let k = 0.35;
+    ballVelY = -1 * k * Math.abs(centerPaddlePosY - ballPosY);
+  }
+}
+
+const paddleColisionHandler = () => {
+  let paddlePosX = canvas.width - PADDLE_SIDE_OFFSET - PADDLE_WIDTH;
+  let paddleTopPosY = paddlePosY;
+  let paddleBottonPosY = paddlePosY + PADDLE_HEIGHT;
+
+  if(ballPosX + BALL_RADIUS > paddlePosX && ballPosY > paddleTopPosY && ballPosY < paddleBottonPosY) {
     ballVelX *= -1;
     
     let centerPaddlePosY = paddleTopPosY + PADDLE_HEIGHT/2;
