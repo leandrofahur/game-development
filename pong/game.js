@@ -62,7 +62,7 @@ const move = () => {
 const ballColisionHandler = () => {
   // BALL COLISION: 
   ballPosX += ballVelX;  
-  // ballPosY += ballVelY;  
+  ballPosY += ballVelY;  
   if(ballPosX - BALL_RADIUS < 0) {
     ballVelX *= -1;
   }
@@ -93,8 +93,9 @@ const ballPaddleColisionHandler = () => {
   let paddleTopPosY = paddlePosY;
   let paddleBottonPosY = paddlePosY + PADDLE_HEIGHT;
 
-  if(ballPosX - BALL_RADIUS <= paddlePosX && ballPosY >= paddleTopPosY && ballPosY <= paddleBottonPosY) {
+  if(ballPosX - BALL_RADIUS < paddlePosX && ballPosY > paddleTopPosY && ballPosY < paddleBottonPosY) {
     ballVelX *= -1;
+    // ballVelY *= -1;
   }
 }
 
