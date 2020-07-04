@@ -10,3 +10,10 @@ const ball = (posXCenter, posYCenter, radius, colorNameOrNumber) => {
   canvasContext.closePath();
   canvasContext.fill();
 }
+
+const ballReset = () => {
+  ballPosX = canvas.width/2;
+  ballPosY = canvas.height/2;
+  ballVelX *= -1;
+  ballVelY = 5;
+}

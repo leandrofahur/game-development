@@ -21,4 +21,5 @@ let paddleVelY = 5;
 // GAME DISPLAY:
 window.onload = () => {
   setInterval(game, 1000/frameRate);
+  addEventListener('mousemove', onUpdateMousePos);
 }

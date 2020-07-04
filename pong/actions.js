@@ -18,7 +18,8 @@ const ballColisionHandler = () => {
   ballPosX += ballVelX;  
   ballPosY += ballVelY;  
   if(ballPosX - BALL_RADIUS < 0) {
-    ballVelX *= -1;
+    // ballVelX *= -1;
+    ballReset();
   }
   if(ballPosX + BALL_RADIUS > canvas.width) {
     ballVelX *= -1;
@@ -33,7 +34,7 @@ const ballColisionHandler = () => {
 
 const paddleColisionHandler = () => {
   // PADDLE COLISION:
-  paddlePosY += paddleVelY;
+  // paddlePosY += paddleVelY;
   if(paddlePosY < 0) {
     paddleVelY *= -1;
   }
@@ -52,7 +53,7 @@ const ballPaddleColisionHandler = () => {
     
     let centerPaddlePosY = paddleTopPosY + PADDLE_HEIGHT/2;
     let k = 0.35;
-    ballVelY = Math.abs(centerPaddlePosY - ballPosY) * 0.35;
+    ballVelY = -1 * k * Math.abs(centerPaddlePosY - ballPosY);
   }
 }
 
