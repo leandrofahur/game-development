@@ -7,13 +7,17 @@ const frameRate = 30;
 // Spaceship vars:
 let spaceshipPosX = canvas.width/2;
 let spaceshipPosY = canvas.height/2;
-let spaceshipVelX = 7;
-let spaceshipVelY = 3;
+let spaceshipVelX = 5;
+let spaceshipVelY = 2;
+const SPACESHIP_HEIGHT = 25;
+const SPACESHIP_WEIGHT = 25;
+const SPACESHIP_OFFSET = 150;
 
 // Enemy vars:
 const ENEMY_WIDTH = 10;
 const ENEMY_HEIGHT = 100;
 const ENEMY_SIDE_OFFSET = 20;
+
 
 // GAME DISPLAY:
 window.onload = () => {
