@@ -22,11 +22,11 @@ const ballColisionHandler = () => {
   ballPosY += ballVelY;  
   if(ballPosX - BALL_RADIUS < 0) {
     ballReset();
-    playerScore++;
+    aiScore++;
   }
   if(ballPosX + BALL_RADIUS > canvas.width) {
     ballReset();
-    aiScore++;
+    playerScore++;
   }
   if(ballPosY - BALL_RADIUS < 0) {
     ballVelY *= -1;
@@ -83,7 +83,7 @@ const onUpdateScores = () => {
 }
 
 const game = () => {
-  draw();
-  move();
-  onUpdateScores();
+    draw();
+    move();
+    onUpdateScores();
 }
