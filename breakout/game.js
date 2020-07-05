@@ -9,9 +9,9 @@ let paddlePosX = canvas.width/2;
 let paddlePosY = canvas.height/2;
 let paddleVelX = 5;
 let paddleVelY = 2;
-const PADDLE_HEIGHT = 15;
+const PADDLE_HEIGHT = 20;
 const PADDLE_WIDTH = 100;
-const PADDLE_OFFSET = 150;
+const PADDLE_OFFSET = 190;
 
 // Ball vars:
 const BALL_RADIUS = 10;

@@ -15,8 +15,8 @@ const move = () => {
 }
 
 const ballColision = () => {
-  ballPosX += ballVelX;
-  ballPosY += ballVelY;
+  // ballPosX += ballVelX;
+  // ballPosY += ballVelY;
 
   if(ballPosX - BALL_RADIUS < 0) {
     ballVelX *= -1;
@@ -33,7 +33,7 @@ const ballColision = () => {
 }
 
 const paddleColision = () => {
-  paddlePosX += paddleVelX;
+  // paddlePosX += paddleVelX;
   
   if(paddlePosX - PADDLE_WIDTH/2 < 0) {
     paddleVelX *= -1;
@@ -47,4 +47,5 @@ const game = () => {
   draw();
   move();  
   colorText(`(${mousePosX}, ${mousePosY})`, mousePosX, mousePosY, 'yellow');
+  console.log(`${paddlePosX}, ${paddlePosY}`);
 }
