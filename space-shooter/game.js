@@ -2,7 +2,7 @@
 // Environment:
 const canvas = document.getElementById('gameCanvas');
 const canvasContext = canvas.getContext('2d');
-const frameRate = 10;
+const frameRate = 30;
 
 // Spaceship vars:
 let spaceshipPosX = canvas.width/2;
@@ -10,7 +10,7 @@ let spaceshipPosY = canvas.height/2;
 let spaceshipVelX = 5;
 let spaceshipVelY = 2;
 const SPACESHIP_HEIGHT = 25*2;
-const SPACESHIP_WEIGHT = 25*2;
+const SPACESHIP_WIDTH = 25*2;
 const SPACESHIP_OFFSET = 150;
 
 // Enemy vars:

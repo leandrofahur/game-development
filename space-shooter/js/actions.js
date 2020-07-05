@@ -4,18 +4,18 @@ const draw = () => {
   // Debbugind purpose:
   grid(canvas.width/10, canvas.height/10);
   // Spaceship:
-  colorBlock(spaceshipPosX - SPACESHIP_WEIGHT/2, canvas.height - SPACESHIP_OFFSET, SPACESHIP_WEIGHT, SPACESHIP_HEIGHT, 'white');
+  colorBlock(spaceshipPosX - SPACESHIP_WIDTH/2, canvas.height - SPACESHIP_OFFSET, SPACESHIP_WIDTH, SPACESHIP_HEIGHT, 'white');
 }
 
 const move = () => {
-  let spaceshipPosXCenter = spaceshipPosX - SPACESHIP_WEIGHT/2;
-  let spaceshipPosYCenter = canvas.width - SPACESHIP_OFFSET;
-
-   += 5;
-  if( spaceshipPosX < 0) {
+  spaceshipPosX += spaceshipVelX;
+  
+  if(spaceshipPosX - SPACESHIP_WIDTH/2 < 0) {
     spaceshipVelX *= -1;
   }
-
+  if(spaceshipPosX + SPACESHIP_WIDTH/2 > canvas.height) {
+    spaceshipVelX *= -1;
+  }
 }
 
 const shot = () => {
