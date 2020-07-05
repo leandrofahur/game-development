@@ -18,9 +18,13 @@ const ENEMY_WIDTH = 10;
 const ENEMY_HEIGHT = 100;
 const ENEMY_SIDE_OFFSET = 20;
 
+// Mouse vars:
+let mousePosX = 0;
+let mousePosY = 0;
+
 
 // GAME DISPLAY:
 window.onload = () => {
   setInterval(game, 1000/frameRate);
-  // addEventListener('mousemove', onUpdateMousePos);
+  addEventListener('mousemove', onUpdateMousePos);
 }

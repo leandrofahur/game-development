@@ -3,6 +3,11 @@ const colorBlock = (posXLeft, posYTop, width, height, colorNameOrNumber) => {
   canvasContext.fillRect(posXLeft, posYTop, width, height);
 }
 
+const colorText = (message, posXLeft, posYTop, colorNameOrNumber) => {
+  canvasContext.fillStyle = colorNameOrNumber;
+  canvasContext.fillText(message, posXLeft, posYTop);
+}
+
 const shot = (posXCenter, posYCenter, radius, colorNameOrNumber) => {
   canvasContext.beginPath();
   canvasContext.fillStyle = colorNameOrNumber;
