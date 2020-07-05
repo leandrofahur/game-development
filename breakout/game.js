@@ -9,16 +9,16 @@ let paddlePosX = canvas.width/2;
 let paddlePosY = canvas.height/2;
 let paddleVelX = 5;
 let paddleVelY = 2;
-const PADDLE_HEIGHT = 25*2;
-const PADDLE_WIDTH = 25*2;
+const PADDLE_HEIGHT = 15;
+const PADDLE_WIDTH = 100;
 const PADDLE_OFFSET = 150;
 
 // Ball vars:
 const BALL_RADIUS = 10;
 let ballPosX = canvas.width/2;
 let ballPosY = canvas.height/2;
-let ballVelX = 0;
-let ballVelY = 0;
+let ballVelX = 4;
+let ballVelY = 7;
 
 // Brick vars:
 const BRICK_WIDTH = 10;
