@@ -23,9 +23,16 @@ const grid = (stepX, stepY) => {
   for(let row = 0; row <= canvas.height; row += stepY) {
     colorLine(0, row, canvas.width, row, 'white');
   }
+
+  for(let col = 0; col <= canvas.width; col += stepX) {
+    for(let row = 0; row <= canvas.height; row += stepY) {
+      colorCircle(col, row, 5, 'green')
+      colorText(`(${col},${row})`, col, row+10, 'yellow');
+    }
+  }
 }
 
-const bullet = (posXCenter, posYCenter, radius, colorNameOrNumber) => {
+const colorCircle = (posXCenter, posYCenter, radius, colorNameOrNumber) => {
   canvasContext.beginPath();
   canvasContext.fillStyle = colorNameOrNumber;
   canvasContext.arc(posXCenter, posYCenter, radius, 0, 2*Math.PI, true);

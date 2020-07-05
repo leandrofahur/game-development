@@ -4,7 +4,7 @@ const draw = () => {
   // Debbugind purpose:
   grid(canvas.width/10, canvas.height/10);
   // Spaceship:
-  colorBlock(spaceshipPosX - SPACESHIP_WIDTH/2, canvas.height - SPACESHIP_OFFSET, SPACESHIP_WIDTH, SPACESHIP_HEIGHT, 'white');
+  colorBlock(spaceshipPosX - SPACESHIP_WIDTH/2, spaceshipPosY + SPACESHIP_OFFSET, SPACESHIP_WIDTH, SPACESHIP_HEIGHT, 'white');
 }
 
 const move = () => {
@@ -19,7 +19,7 @@ const move = () => {
 }
 
 const shot = () => {
-  
+  bullet(sp)
 }
 
 const game = () => {
