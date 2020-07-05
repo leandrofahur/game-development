@@ -21,6 +21,13 @@ const ENEMY_SIDE_OFFSET = 20;
 // Mouse vars:
 let mousePosX = 0;
 let mousePosY = 0;
+let isMouseClicked = false;
+
+// Bullet vars:
+const BULLET_RADIUS = 5;
+let bulletPosX = 0;
+let bulletPosY = 0;
+let bulletVelY = 3;
 
 
 
@@ -28,4 +35,5 @@ let mousePosY = 0;
 window.onload = () => {
   setInterval(game, 1000/frameRate);
   addEventListener('mousemove', onUpdateMousePos);
+  addEventListener('mousedown', onUpdateMouseClick);
 }

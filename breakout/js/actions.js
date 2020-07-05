@@ -18,6 +18,18 @@ const move = () => {
   }
 }
 
+// const shoot = () => {
+//   bulletPosX = spaceshipPosX;
+//   bulletPosY = spaceshipPosY;
+  
+//   if(isMouseClicked) {  
+//     colorCircle(bulletPosX, bulletPosY, 10, 'blue');
+//     bulletPosY -= bulletVelY;
+//   } else {
+
+//   }
+// }
+
 const game = () => {
   draw();
   move();
