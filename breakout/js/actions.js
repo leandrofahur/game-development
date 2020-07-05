@@ -8,6 +8,10 @@ const draw = () => {
 }
 
 const move = () => {
+  paddleColision();
+}
+
+const paddleColision = () => {
   paddlePosX += paddleVelX;
   
   if(paddlePosX - PADDLE_WIDTH/2 < 0) {
@@ -18,16 +22,12 @@ const move = () => {
   }
 }
 
+const ballColision = () => {
+  
+}
+
 const game = () => {
   draw();
-  move();
-
-  if(isMouseClicked) {  
-    colorCircle(bulletPosX, bulletPosY, 10, 'blue');
-    bulletPosY -= bulletVelY;
-  } else {
-
-  }
-  
+  move();  
   colorText(`(${mousePosX}, ${mousePosY})`, mousePosX, mousePosY, 'yellow');
 }

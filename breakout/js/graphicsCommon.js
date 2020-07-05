@@ -23,7 +23,6 @@ const grid = (stepX, stepY) => {
   for(let row = 0; row <= canvas.height; row += stepY) {
     colorLine(0, row, canvas.width, row, 'white');
   }
-
   for(let col = 0; col <= canvas.width; col += stepX) {
     for(let row = 0; row <= canvas.height; row += stepY) {
       colorCircle(col, row, 5, 'green')
