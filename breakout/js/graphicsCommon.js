@@ -40,10 +40,10 @@ const colorCircle = (posXCenter, posYCenter, radius, colorNameOrNumber) => {
   canvasContext.fill();
 }
 
-const spaceshipReset = () => {
-  spaceshipPosX = canvas.width/2;
-  spaceshipPosY = canvas.height/2;
-  spaceshipVelX *= -1;
-  spaceshipVelY = 5;
+const paddleReset = () => {
+  paddlePosX = canvas.width/2;
+  paddlePosY = canvas.height/2;
+  paddleVelX *= -1;
+  paddleVelY = 5;
 }
 
